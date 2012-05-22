@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+   <head>
+      <link href="../css/doc.css" rel="stylesheet" type="text/css" />
+      <title>Documentation - Audero Context Menu by Aurelio De Rosa</title>
+   </head>
+   <body>
+      <h1>Audero Context Menu</h1>
+
+      <h2>TABLE OF CONTENT</h2>
+      <ul>
+         <li><a href="index.html">Home</a></li>
+         <li><a href="examples.html">Examples</a></li>
+         <li><a href="#how-to">How to use the plugin</a></li>
+         <li>
+            <a href="#configuration">Configuration</a>
+            <ul>
+               <li><a href="#init">init</a></li>
+               <li><a href="#show">show</a></li>
+               <li><a href="#hide">hide</a></li>
+            </ul>
+         </li>
+      </ul>
+
+      <h2 id="how-to">HOW TO USE THE PLUGIN</h2>
+      <p>
+         To have a custom context menu when a user right-click on one or more elements you have to
+         include the CSS and the JavaScript files provided. You can add the CSS in this way:
+      </p>
+      <pre>
+&lt;link href="/css/audero-context-menu.css" rel="stylesheet"
+  type="text/css" /&gt;
+      </pre>
+      <p>
+         The link to this plugin and to jQuery can be added in this way:
+      </p>
+      <pre>
+&lt;script src="http://code.jquery.com/jquery.min.js"
+  type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="/javascript/audero-context-menu.js"
+  type="text/javascript"&gt;&lt;/script&gt;
+      </pre>
+      <p>
+         If you want to use the compressed version of the plugin, you have to replace
+         <code>src="/javascript/audero-context-menu.js"</code> with
+         <code>src="/javascript/audero-context-menu-min.js"</code>.
+         The result should be this:
+      </p>
+      <pre>
+&lt;script src="/javascript/audero-context-menu-min.js"
+  type="text/javascript"&gt;&lt;/script&gt;
+      </pre>
+      <p>
+         Now that you have added all the files needed, you have to create the menu and to
+         choose the element(s) to attach the menu. To create the menu you have to write a simple
+         unordered list having "audero-context-menu" as class and an id (for example
+         "context-menu-1"). The menu should looks like this:
+      </p>
+      <pre>
+&lt;ul id="context-menu-1" class="audero-context-menu"&gt;
+  &lt;li&gt;
+    &lt;a href="http://www.audero.it" target="_blank"&gt;
+      Audero
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="http://ug.audero.it" target="_blank"&gt;
+      Audero user group
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href="http://www.picasabackup.com" target="_blank"&gt;
+      Picasa backup
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+      <p>
+         The simplest method to attach the custom menu to an element is to use a single line of code.
+         Let that you have a div having "area" as id inside your page, you have to write this code in
+         order to active the menu.
+      </p>
+      <pre>
+&lt;script type="text/javascript"&gt;
+$(document).ready
+(
+  function()
+  {
+    $('#area').auderoContextMenu('context-menu-1');
+  }
+);
+&lt;/script&gt;
+      </pre>
+      <p>
+         Now, when you will right-click inside the specified element the custom context menu will be shown
+         instead of the default one.<br />
+         For more configuration options you can look at the <a href="#configuration">configuration section</a>.
+         To see some examples you can look at the <a href="examples.html">examples page</a>.
+      </p>
+
+      <h2 id="configuration">CONFIGURATION</h2>
+      <p>
+         Starting from the pieces of code shown, here is a list of all the methods and the attributes
+         you can employ in order to use this plugin.
+      </p>
+
+      <h3>ATTRIBUTES</h3>
+      <p>
+         The follow is a list of all the possible attributes that you can use to configure the menu.
+         The ones in red are <span class="required">required</span>. To use a detailed configuration
+         you have to use an object.
+      </p>
+      <ul>
+         <li>
+            <b class="required">idMenu</b>: The id of the menu that has to be shown.
+         </li>
+         <li>
+            <b>posX</b>: The X coordinate used to show the menu. If the value is not set or is null the
+            current position of the mouse will be used.
+         </li>
+         <li>
+            <b>posY</b>: The Y coordinate used to show the menu. If the value is not set or is null the
+            current position of the mouse will be used.
+         </li>
+      </ul>
+
+      <h3>METHODS</h3>
+      <p>
+         The follow is a list that explains all the methods that you can use.
+      </p>
+
+      <h4 class="method" id="init">init (options)</h4>
+      <p class="method">
+         Initialize the settings to show the context menu.
+      </p>
+
+      <h5>Parameters</h5>
+      <ul>
+         <li>
+            <b>options</b>: (object|string) An object with the paramaters for the menu. The possible values
+            can be seen looking at the global var "defaultValues". If a string is provided, it is used as the
+            id of the menu to show. If the one of the coordinates value null, the current position of the
+            mouse will be used.
+         </li>
+      </ul>
+
+      <h4 class="method" id="show">show (params[, event[, idElem]])</h4>
+      <p class="method">
+         The method used to run the animation.<br />
+         If you want to use it directly, for example to set that also on left-click the custom menu has to
+         been shown, you have to write the code as you can see below. You can find more on this looking at
+         <a href="examples.html#example-3">example 3</a>
+      </p>
+
+      <h5>Parameters</h5>
+      <ul>
+         <li>
+            <b>params</b>: (object|string) An object with the paramaters for the menu. The possible values
+            can be seen looking at the global var "defaultValues". If a string is provided, it is used as the
+            id of the menu to show. If the one of the coordinates value null, the current position of the
+            mouse will be used.
+         </li>
+         <li>
+            <b>event</b>: (object) (optional) The event that fired the method call.
+         </li>
+         <li>
+            <b>idElem</b>: (string) (optional) The id of the element which the menu is attached.
+         </li>
+      </ul>
+
+      <h5>Examples</h5>
+      <pre>
+// Show the menu having id "context-menu-1"
+$().auderoContextMenu('show', 'context-menu-1', event);
+
+// Show the menu having id "context-menu-2" in a fixed position
+$().auderoContextMenu(
+  'show',
+  {
+    'idMenu': 'context-menu-2',
+    'posX': '500',
+    'posY': '100'
+  }
+);
+      </pre>
+
+      <h4 class="method" id="hide">hide ([id])</h4>
+      <p class="method">
+         The function used to hide one or more menu. This function is recursive.<br />
+         If you want to use it directly, for example to hide a single menu or to hide all, you have to write
+         code like these:
+      </p>
+
+      <h5>Parameters</h5>
+      <ul>
+         <li>
+            <b>id</b>: (array|string) This parameter is optional. If id is null or not defined, all the menus in
+            "elementsSettings" will be hidden. Else an array of id or a single id can be provided. In this case
+            only the specified menu(s) will be hidden.
+         </li>
+      </ul>
+
+      <h5>Examples</h5>
+      <pre>
+// Hide all the menus
+$().auderoContextMenu('hide');
+
+// Hide the menu with id "context-menu-1"
+$().auderoContextMenu('hide', 'context-menu-1');
+
+// Hide the menus in the array ("context-menu-1" and "context-menu-2")
+$().auderoContextMenu('hide', ['context-menu-1', 'context-menu-2']);
+      </pre>
+   </body>
+</html>

@@ -1,0 +1,41 @@
+/*
+    Document   : audero-context-menu
+    Author     : Aurelio De Rosa <aurelioderosa@gmail.com>
+    Version    : 1.0
+	 License    : http://creativecommons.org/licenses/by/3.0/ CC BY 3.0
+	 Link       : https://bitbucket.org/AurelioDeRosa/auderocontextmenu
+    Description:
+        Used to style the context menu
+*/
+
+ul.audero-context-menu
+{
+   position: absolute;
+   display: none;
+   background-color: menu;
+   list-style-type: none !important;
+   margin: 0px !important;
+   padding: 0px !important;
+}
+
+ul.audero-context-menu *
+{
+   color: menutext;
+}
+
+ul.audero-context-menu > li
+{
+   border: 1px solid black;
+	margin: 0px !important;
+   padding: 2px 5px !important;
+}
+
+ul.audero-context-menu > li:hover
+{
+   background-color: activecaption;
+}
+
+ul.audero-context-menu > li a
+{
+   display: block;
+}
