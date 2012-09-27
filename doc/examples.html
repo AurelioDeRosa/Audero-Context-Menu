@@ -182,7 +182,7 @@ $(document).ready
                $('#area-3').click(
                   function(event)
                   {
-                     $().auderoContextMenu('show', 'context-menu-1', event);
+                     $(this).auderoContextMenu('show', 'context-menu-1', event);
                   }
                );
             }
@@ -208,7 +208,7 @@ $(document).ready
     $('#area-3').click(
       function(event)
       {
-        $('#area').auderoContextMenu('show', 'context-menu-1', event);
+        $(this).auderoContextMenu('show', 'context-menu-1', event);
       }
     );
   }
