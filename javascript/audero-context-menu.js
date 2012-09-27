@@ -17,7 +17,7 @@
  * the software.
  *
  * @author   Aurelio De Rosa <aurelioderosa@gmail.com>
- * @version  1.0
+ * @version  1.1
  * @license  http://creativecommons.org/licenses/by/3.0/ CC BY 3.0
  * @link     https://bitbucket.org/AurelioDeRosa/auderocontextmenu
  */
@@ -27,7 +27,7 @@
    var defaultValues = {
       'idMenu': null, // The id of the menu that has to be shown
       'posX': null, // The X coordinate used to show the menu.
-      'posY': null // The X coordinate used to show the menu.
+      'posY': null // The Y coordinate used to show the menu.
    };
 
    // The object that contains the settings for all the elements and
@@ -41,8 +41,8 @@
       * Initialize the settings to show the context menu.
       * @param options object|string An object with the paramaters for the menu.
       * The possible values can be seen looking at the global var "defaultValues".
-      * If a string is provided, it is used as the id of the menu to show. If the
-      * one of the coordinates value null, the current position of the mouse will be used.
+      * If a string is provided, it is used as the id of the menu to show. If one
+      * of the coordinates value is null, the current position of the mouse will be used.
       */
       init: function(options)
       {
@@ -82,8 +82,6 @@
                   params.posY = event.pageY;
                }
                methods.show(params, event, id);
-
-               return false;
             }
          );
       },
@@ -100,11 +98,9 @@
       {
          var idMenu;
 
-         if (event != undefined)
-         {
-            event.preventDefault();
-            event.stopPropagation();
-         }
+         event = event || window.event;
+         event.preventDefault();
+         event.stopPropagation();
 
          if (typeof params === 'object')
              idMenu = params.idMenu;
@@ -147,8 +143,6 @@
          .css('top', params.posY + 'px')
          .css('left', params.posX + 'px')
          .show();
-
-         return false;
       },
      /**
       * The recursive method used to hide one or more menu.

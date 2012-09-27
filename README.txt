@@ -5,7 +5,7 @@ GENERAL INFO
 ---------------------------
 
 Author:     Aurelio De Rosa <aurelioderosa@gmail.com>
-Version:    1.0
+Version:    1.1
 License:    http://creativecommons.org/licenses/by/3.0/ Creative Commons BY 3.0
 Link:       https://bitbucket.org/AurelioDeRosa/auderocontextmenu
 
