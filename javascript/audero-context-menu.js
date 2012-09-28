@@ -98,7 +98,6 @@
       {
          var idMenu;
 
-         event = event || window.event;
          event.preventDefault();
          event.stopPropagation();
 
