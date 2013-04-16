@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+   <head>
+      <title>Audero Context Menu Demo - Created by Aurelio De Rosa</title>
+      <meta charset="UTF-8"/>
+      <style>
+         body
+         {
+            width: 500px;
+            margin: 0 auto;
+         }
+
+         h1
+         {
+            text-align: center;
+         }
+
+         .area
+         {
+            height: 100px;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #ADD8E6;
+         }
+
+         #area-2
+         {
+            position: relative;
+         }
+      </style>
+      <link rel="stylesheet" href="../src/css/jquery.auderoContextMenu.css"/>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script src="../src/js/jquery.auderoContextMenu.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+            $("#area-1").auderoContextMenu("context-menu-1");
+            $("#area-2").auderoContextMenu({
+               idMenu: "context-menu-2",
+               posX: 10,
+               posY: 20
+            });
+            $("#area-3").auderoContextMenu({
+               idMenu: "context-menu-3",
+               bindLeftClick: true
+            });
+         });
+      </script>
+   </head>
+   <body>
+      <h1>Audero Context Menu Demo - Created by Aurelio De Rosa</h1>
+
+      <h2>Example 1 - Basic</h2>
+      <p>
+         This example shows you the basic behavior of Audero Context Menu.
+      </p>
+      <ul id="context-menu-1" class="audero-context-menu">
+         <li><a href="http://www.audero.it" target="_blank">Audero</a></li>
+         <li><a href="https://twitter.com/AurelioDeRosa" target="_blank">Aurelio De Rosa on Twitter</a></li>
+         <li><a href="https://github.com/AurelioDeRosa" target="_blank">Aurelio De Rosa on GitHub</a></li>
+      </ul>
+      <div id="area-1" class="area">
+         Right-click here to show the custom menu.<br />
+         Left-click here or click outside this area and the menu will disappear.
+      </div>
+
+      <h2>Example 2 - Menu with fixed position</h2>
+      <p>
+         This example shows you how, with few changes, you can display the menu in a fixed position. All you have to do
+         is to place the menu (the &lt;ul&gt;) inside the element you want to attach the plugin and set the CSS
+         <code>position</code> attribute of the latter to <code>relative</code>.
+      </p>
+      <div id="area-2" class="area">
+         Right-click here to show another custom menu with <b>fixed position</b>.<br />
+         Left-click here or click outside this area and the menu will disappear.
+         <ul id="context-menu-2" class="audero-context-menu">
+            <li><a href="http://www.audero.it" target="_blank">Audero</a></li>
+            <li><a href="https://www.jquery.com" target="_blank">jQuery.com</a></li>
+         </ul>
+      </div>
+
+      <h2>Example 3 - Bind left click</h2>
+      <p>
+         This example shows how you can have the custom context menu also for the mouse left button click event.
+      </p>
+      <ul id="context-menu-3" class="audero-context-menu">
+         <li><a href="https://plus.google.com/111199469497044249730" target="_blank">Aurelio De Rosa on Google+</a></li>
+         <li><a href="http://it.linkedin.com/in/aurelioderosa/en" target="_blank">Aurelio De Rosa on LinkedIn</a></li>
+      </ul>
+      <div id="area-3" class="area">
+         Click (right or left) here to show the custom menu.<br />
+         Click outside this area and the menu will disappear.
+      </div>
+   </body>
+</html>
