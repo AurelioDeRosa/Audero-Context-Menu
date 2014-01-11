@@ -1,0 +1,27 @@
+{
+   "name": "audero-context-menu",
+   "version": "2.0.0",
+   "location": "git://github.com/AurelioDeRosa/Audero-Context-Menu.git",
+   "description": "Audero Context Menu is a cross-browser jQuery plugin that allows you to show a custom context menu on one or more specified elements.",
+   "keywords": [
+      "jquery",
+      "plugin",
+      "menu",
+      "context-menu"
+   ],
+   "main": [
+      "src/js/jquery.auderoContextMenu.js",
+      "src/css/jquery.auderoContextMenu.css"
+   ]
+   "dependencies": {
+      "jquery": ">=1.7"
+   },
+   "license": [
+      "MIT",
+      "GPL-3.0"
+   ],
+   "authors": [
+      "Aurelio De Rosa <aurelioderosa@gmail.com>"
+   ],
+   "homepage": "https://github.com/AurelioDeRosa/Audero-Context-Menu"
+}
