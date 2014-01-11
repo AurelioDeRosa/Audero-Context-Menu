@@ -11,7 +11,13 @@ Being a jQuery plugin, the only requirement is [jQuery](http://www.jquery.com).
 It has been tested and works on all the major browsers, including Internet Explorer 6 and later.
 
 ## Installation ##
-To install this plugin you need to include the Javascript file, **after** the [jQuery](http://www.jquery.com) library, and the CSS file in the header of your web page as shown below:
+You can install Audero Unified Placeholders by using [Bower](http://bower.io).
+
+    bower install audero-unified-placeholders
+
+Alternatively, you have to manually download it.
+
+Remember to include the Javascript file, **after** the [jQuery](http://www.jquery.com) library, and the CSS file in the header of your web page as shown below:
 
     <link rel="stylesheet" href="path/to/auderoContextMenu.css" />
     <script src="path/to/jquery.js"></script>
