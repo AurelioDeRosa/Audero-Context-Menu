@@ -12,7 +12,7 @@
    "main": [
       "src/js/jquery.auderoContextMenu.js",
       "src/css/jquery.auderoContextMenu.css"
-   ]
+   ],
    "dependencies": {
       "jquery": ">=1.7"
    },
