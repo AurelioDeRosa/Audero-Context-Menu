@@ -11,9 +11,9 @@ Being a jQuery plugin, the only requirement is [jQuery](http://www.jquery.com).
 It has been tested and works on all the major browsers, including Internet Explorer 6 and later.
 
 ## Installation ##
-You can install Audero Unified Placeholders by using [Bower](http://bower.io).
+You can install Audero Context Menu by using [Bower](http://bower.io).
 
-    bower install audero-unified-placeholders
+    bower install audero-context-menu
 
 Alternatively, you have to manually download it.
 

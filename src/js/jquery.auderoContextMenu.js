@@ -3,7 +3,7 @@
  * you to show a custom context menu on one or more specified elements.
  *
  * @author  Aurelio De Rosa <aurelioderosa@gmail.com>
- * @version 2.0.2
+ * @version 2.0.3
  * @link    https://github.com/AurelioDeRosa/Audero-Context-Menu
  * @license Dual licensed under MIT (http://www.opensource.org/licenses/MIT)
  * and GPL-3.0 (http://opensource.org/licenses/GPL-3.0)
