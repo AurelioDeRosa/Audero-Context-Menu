@@ -10,13 +10,6 @@
  */
 (function($)
 {
-   var defaultValues = {
-      idMenu: null, // string (required). The id of the menu that has to be shown
-      posX: null,   // number (optional). The X coordinate used to show the menu
-      posY: null,   // number (optional). The Y coordinate used to show the menu
-      bindLeftClick: false // boolean (optional). If the menu has to be shown also on mouse left button click
-   };
-
    var methods =
    {
       init: function(options)
@@ -24,7 +17,7 @@
          if (typeof options === "string") {
             options = {idMenu: options};
          }
-         options = $.extend(true, {}, defaultValues, options);
+         options = $.extend(true, {}, $.fn.auderoContextMenu.defaults, options);
 
          if (options.idMenu == null) {
             $.error("No menu specified");
@@ -68,5 +61,12 @@
          return methods.init.apply(this, arguments);
       else
          $.error("Method " + method + " does not exist on jQuery.auderoContextMenu");
+   };
+
+   $.fn.auderoContextMenu.defaults = {
+      idMenu: null, // string (required). The id of the menu that has to be shown
+      posX: null,   // number (optional). The X coordinate used to show the menu
+      posY: null,   // number (optional). The Y coordinate used to show the menu
+      bindLeftClick: false // boolean (optional). If the menu has to be shown also on mouse left button click
    };
 })(jQuery);
