@@ -8,18 +8,19 @@
  * @license Dual licensed under MIT (http://www.opensource.org/licenses/MIT)
  * and GPL-3.0 (http://opensource.org/licenses/GPL-3.0)
  */
-(function($)
-{
-   var methods =
-   {
-      init: function(options)
-      {
+(function($) {
+   "use strict";
+
+   var methods = {
+      init: function(options) {
          if (typeof options === "string") {
-            options = {idMenu: options};
+            options = {
+               idMenu: options
+            };
          }
          options = $.extend(true, {}, $.fn.auderoContextMenu.defaults, options);
 
-         if (options.idMenu == null) {
+         if (!options.idMenu) {
             $.error("No menu specified");
             return;
          } else if ($("#" + options.idMenu) == null) {
@@ -36,7 +37,7 @@
          );
 
          this.on(
-            "contextmenu " + (options.bindLeftClick ? " click": ""),
+            "contextmenu " + (options.bindLeftClick ? " click" : ""),
             function(event) {
                event.preventDefault();
                event.stopPropagation();
@@ -54,13 +55,14 @@
       }
    };
 
-   $.fn.auderoContextMenu = function (method) {
-      if (methods[method])
+   $.fn.auderoContextMenu = function(method) {
+      if (methods[method]) {
          return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-      else if (typeof method === "object" || typeof method === "string" || !method)
+      } else if (typeof method === "object" || typeof method === "string" || !method) {
          return methods.init.apply(this, arguments);
-      else
+      } else {
          $.error("Method " + method + " does not exist on jQuery.auderoContextMenu");
+      }
    };
 
    $.fn.auderoContextMenu.defaults = {
