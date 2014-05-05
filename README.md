@@ -101,7 +101,7 @@ Overriding the default values you can turn it into the following:
 
 ## Advanced Examples ##
 ### Menu with fixed position ###
-This example shows you how, with few changes, you can display the menu in a fixed position. All you have to do is to place the menu (the `<ul>`) inside the element you want to attach the plugin and set the CSS position attribute of the latter to relative.
+This example shows you how, with few changes, you can display the menu in a fixed position. All you have to do is to place the menu (the `<ul>`) inside the element you want to attach the plugin and set the CSS position attribute of the latter to `relative`.
 So, your HTML code should look like this:
 
     <div id="area-2" class="area">
