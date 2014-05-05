@@ -23,7 +23,7 @@
          if (!options.idMenu) {
             $.error("No menu specified");
             return;
-         } else if ($("#" + options.idMenu) == null) {
+         } else if (document.getElementById(options.idMenu) === null) {
             $.error("The menu specified does not exist");
             return;
          }
