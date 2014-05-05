@@ -113,7 +113,14 @@ So, your HTML code should look like this:
        </ul>
     </div>
 
-To show the menu at 10px from the left margin and 20px from the top margin of the element position, you have to write the following code:
+Then, you need to have the following style somewhere in your page:
+
+    #area-2
+    {
+       position: relative;
+    }
+
+Finally, to show the menu at 10px from the left margin and 20px from the top margin of the element position, you have to write the following code:
 
     <script>
        $(document).ready(function() {
