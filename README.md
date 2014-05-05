@@ -15,7 +15,7 @@ You can install Audero Context Menu by using [Bower](http://bower.io).
 
     bower install audero-context-menu
 
-Alternatively, you have to manually download it.
+Alternatively, you can manually download it.
 
 Remember to include the Javascript file, **after** the [jQuery](http://www.jquery.com) library, and the CSS file in the header of your web page as shown below:
 
@@ -60,6 +60,17 @@ Please note that the previous snippet is a shortcut for:
     </script>
 
 You can read more on the meaning of `idMenu` and the other options available in the "Options" section.
+
+### Destroy ###
+In some cases, you may want to remove the effect of this plugin. To achieve this goal, you can call the `auderoContextMenu()` method passing the string `destroy`.
+
+Let's say that you want to delete the effect of the plugin on an element having ID `area-1` as soon as a button having ID `button-destroy` is clicked. To do that, you can write a code like the following:
+
+    <script>
+       $("#button-destroy").click(function() {
+          $("#area-1").auderoContextMenu("destroy");
+       });
+    </script>
 
 ## Options ##
 Audero Context Menu has few options you can set during the call to the `auderoContextMenu()` method. The options are:
