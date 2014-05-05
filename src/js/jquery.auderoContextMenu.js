@@ -52,6 +52,8 @@
                   .show();
             }
          );
+
+         return this;
       }
    };
 
