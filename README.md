@@ -5,7 +5,7 @@
 A live demo is available [here](http://htmlpreview.github.io/?https://github.com/AurelioDeRosa/Audero-Context-Menu/blob/master/demo/index.html).
 
 ## Requirements ##
-Being a jQuery plugin, the only requirement is [jQuery](http://www.jquery.com).
+Being a jQuery plugin, the only requirement is [jQuery](http://www.jquery.com) starting from version **1.7**.
 
 ## Compatibility ##
 It has been tested and works on all the major browsers, including Internet Explorer 6 and later.
@@ -68,6 +68,36 @@ Audero Context Menu has few options you can set during the call to the `auderoCo
 * `posX` (`number`. Default: `null`): The X coordinate used to show the menu. If the value is not set or is null the current position of the mouse will be used.
 * `posY` (`number`. Default: `null`): The Y coordinate used to show the menu. If the value is not set or is null the current position of the mouse will be used.
 * `bindLeftClick` (`boolean`. Default: `false`): If the menu has to be shown also on mouse left button click.
+
+### Override default values ###
+[Audero Context Menu](https://github.com/AurelioDeRosa/Audero-Context-Menu) has been developed following the current best practices in developing plugins for jQuery. Therefore, it exposes the previously cited options through the `defaults` object, allowing you to override the properties' default value. Changing the default values, you don't need to specify them again when you call the `auderoContextMenu()` method. For example, let that you have the following code:
+
+    <script>
+       $(document).ready(function() {
+          $("#area-1").auderoContextMenu({
+             idMenu: "context-menu-1",
+             bindLeftClick: true
+          });
+          $("#area-2").auderoContextMenu({
+             idMenu: "context-menu-2",
+             bindLeftClick: true
+          });
+       });
+    </script>
+
+Overriding the default values you can turn it into the following:
+
+    <script>
+       $(document).ready(function() {
+          $.fn.auderoContextMenu.defaults.bindLeftClick = true;
+          $("#area-1").auderoContextMenu({
+             idMenu: "context-menu-1"
+          });
+          $("#area-2").auderoContextMenu({
+             idMenu: "context-menu-2"
+          });
+       });
+    </script>
 
 ## Advanced Examples ##
 ### Menu with fixed position ###
