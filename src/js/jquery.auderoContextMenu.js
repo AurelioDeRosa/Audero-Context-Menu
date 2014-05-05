@@ -68,7 +68,12 @@
       destroy: function() {
          var options = this.data(namespace);
          if (options !== undefined) {
+            // Hide the menu if it's currently visible
+            $("#" + options.idMenu).hide();
+
+            // Remove the handlers and the data from the elements
             this
+               .removeData(namespace)
                .add("html")
                .off("." + localeNamespace(options.idMenu));
          }
