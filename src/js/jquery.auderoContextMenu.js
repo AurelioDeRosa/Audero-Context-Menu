@@ -11,6 +11,11 @@
 (function($) {
    "use strict";
 
+   var namespace = "audero-context-menu";
+   var localeNamespace = function(idMenu) {
+      return namespace + "-" + idMenu;
+   };
+
    var methods = {
       init: function(options) {
          if (typeof options === "string") {
@@ -28,20 +33,25 @@
             return;
          }
 
-         // Hide all if the user left-click or right-click outside the elements specified
+         methods.destroy.call(this);
+         this.data(namespace, options);
+         var currentNamespace = localeNamespace(options.idMenu);
+
+         // Hide the menu if the user clicks outside the elements specified
          $("html").on(
-            "contextmenu click",
+            "contextmenu." + currentNamespace + " click." + currentNamespace,
             function() {
                $("#" + options.idMenu).hide();
             }
          );
 
          this.on(
-            "contextmenu " + (options.bindLeftClick ? " click" : ""),
+            "contextmenu." + currentNamespace + (options.bindLeftClick ? " click." + currentNamespace : ""),
             function(event) {
                event.preventDefault();
                event.stopPropagation();
 
+               // Intentional use of the equal operator
                var posX = (options.posX == null) ? event.pageX : options.posX;
                var posY = (options.posY == null) ? event.pageY : options.posY;
                $("#" + options.idMenu)
@@ -52,6 +62,16 @@
                   .show();
             }
          );
+
+         return this;
+      },
+      destroy: function() {
+         var options = this.data(namespace);
+         if (options !== undefined) {
+            this
+               .add("html")
+               .off("." + localeNamespace(options.idMenu));
+         }
 
          return this;
       }
@@ -68,9 +88,9 @@
    };
 
    $.fn.auderoContextMenu.defaults = {
-      idMenu: null, // string (required). The id of the menu that has to be shown
-      posX: null,   // number (optional). The X coordinate used to show the menu
-      posY: null,   // number (optional). The Y coordinate used to show the menu
+      idMenu: null,        // string (required). The id of the menu that has to be shown
+      posX: null,          // number (optional). The X coordinate used to show the menu
+      posY: null,          // number (optional). The Y coordinate used to show the menu
       bindLeftClick: false // boolean (optional). If the menu has to be shown also on mouse left button click
    };
 })(jQuery);
