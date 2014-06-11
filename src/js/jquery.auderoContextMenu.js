@@ -9,16 +9,16 @@
  * and GPL-3.0 (http://opensource.org/licenses/GPL-3.0)
  */
 (function($) {
-   "use strict";
+   'use strict';
 
-   var namespace = "audero-context-menu";
+   var namespace = 'audero-context-menu';
    var localeNamespace = function(idMenu) {
-      return namespace + "-" + idMenu;
+      return namespace + '-' + idMenu;
    };
 
    var methods = {
       init: function(options) {
-         if (typeof options === "string") {
+         if (typeof options === 'string') {
             options = {
                idMenu: options
             };
@@ -26,10 +26,10 @@
          options = $.extend(true, {}, $.fn.auderoContextMenu.defaults, options);
 
          if (!options.idMenu) {
-            $.error("No menu specified");
+            $.error('No menu specified');
             return;
          } else if (document.getElementById(options.idMenu) === null) {
-            $.error("The menu specified does not exist");
+            $.error('The menu specified does not exist');
             return;
          }
 
@@ -38,26 +38,25 @@
          var currentNamespace = localeNamespace(options.idMenu);
 
          // Hide the menu if the user clicks outside the elements specified
-         $("html").on(
-            "contextmenu." + currentNamespace + " click." + currentNamespace,
+         $('html').on(
+            'contextmenu.' + currentNamespace + ' click.' + currentNamespace,
             function() {
-               $("#" + options.idMenu).hide();
+               $('#' + options.idMenu).hide();
             }
          );
 
          this.on(
-            "contextmenu." + currentNamespace + (options.bindLeftClick ? " click." + currentNamespace : ""),
+            'contextmenu.' + currentNamespace + (options.bindLeftClick ? ' click.' + currentNamespace : ''),
             function(event) {
                event.preventDefault();
                event.stopPropagation();
 
-               // Intentional use of the equal operator
-               var posX = (options.posX == null) ? event.pageX : options.posX;
-               var posY = (options.posY == null) ? event.pageY : options.posY;
-               $("#" + options.idMenu)
+               var posX = (options.posX === null) ? event.pageX : options.posX;
+               var posY = (options.posY === null) ? event.pageY : options.posY;
+               $('#' + options.idMenu)
                   .css({
-                     top: posY + "px",
-                     left: posX + "px"
+                     top: posY + 'px',
+                     left: posX + 'px'
                   })
                   .show();
             }
@@ -69,13 +68,13 @@
          var options = this.data(namespace);
          if (options !== undefined) {
             // Hide the menu if it's currently visible
-            $("#" + options.idMenu).hide();
+            $('#' + options.idMenu).hide();
 
             // Remove the handlers and the data from the elements
             this
                .removeData(namespace)
-               .add("html")
-               .off("." + localeNamespace(options.idMenu));
+               .add('html')
+               .off('.' + localeNamespace(options.idMenu));
          }
 
          return this;
@@ -85,10 +84,10 @@
    $.fn.auderoContextMenu = function(method) {
       if (methods[method]) {
          return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-      } else if (typeof method === "object" || typeof method === "string" || !method) {
+      } else if (typeof method === 'object' || typeof method === 'string' || !method) {
          return methods.init.apply(this, arguments);
       } else {
-         $.error("Method " + method + " does not exist on jQuery.auderoContextMenu");
+         $.error('Method ' + method + ' does not exist on jQuery.auderoContextMenu');
       }
    };
 
