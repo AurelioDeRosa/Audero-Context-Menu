@@ -63,17 +63,21 @@
          return this;
       },
       destroy: function() {
-         var options = this.data(namespace);
-         if (options !== undefined) {
-            // Hide the menu if it's currently visible
-            $('#' + options.idMenu).hide();
+         this
+            .each(function () {
+               var $this = $(this);
+               var options = $this.data(namespace);
+               if (options !== undefined) {
+                  // Hide the menu if it's currently visible
+                  $('#' + options.idMenu).hide();
 
-            // Remove the handlers and the data from the elements
-            this
-               .removeData(namespace)
-               .add('html')
-               .off('.' + localeNamespace(options.idMenu));
-         }
+                  $this
+                     .removeData(namespace)
+                     .off('.' + localeNamespace(options.idMenu));
+               }
+            });
+
+         $('html').off('.' + namespace);
 
          return this;
       }
