@@ -27,10 +27,8 @@
 
          if (!options.idMenu) {
             $.error('No menu specified');
-            return;
          } else if (document.getElementById(options.idMenu) === null) {
             $.error('The menu specified does not exist');
-            return;
          }
 
          methods.destroy.call(this);
