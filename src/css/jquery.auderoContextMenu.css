@@ -5,8 +5,8 @@ ul.audero-context-menu
    display: none;
    background-color: menu;
    list-style-type: none !important;
-   margin: 0px !important;
-   padding: 0px !important;
+   margin: 0 !important;
+   padding: 0 !important;
 }
 
 ul.audero-context-menu *
@@ -17,7 +17,7 @@ ul.audero-context-menu *
 ul.audero-context-menu > li
 {
    border: 1px solid black;
-	margin: 0px !important;
+	margin: 0 !important;
    padding: 2px 5px !important;
 }
 
