@@ -53,8 +53,8 @@
                var posY = (options.posY === null) ? event.pageY : options.posY;
                $('#' + options.idMenu)
                   .css({
-                     top: posY + 'px',
-                     left: posX + 'px'
+                     top: posY,
+                     left: posX
                   })
                   .show();
             }
