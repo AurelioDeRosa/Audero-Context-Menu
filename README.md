@@ -46,6 +46,22 @@ The CSS file should be placed in the `head` of your web page as shown below:
    <link rel="stylesheet" href="path/to/auderoContextMenu.css" />
 ```
 
+### Inclusion with Browserify
+
+To use Audero Context Menu with Browserify, you have to write:
+
+```js
+require('audero-context-menu')();
+```
+
+If you want to specify the global environment and augment a specific version of jQuery, you can pass both to
+the plugin:
+
+```js
+var jQuery = require('jquery');
+require('audero-context-menu')(window, jQuery);
+```
+
 ## Usage
 
 Once you have all the files in place, you have to create the menu and choose the element(s) that will interact with it.
