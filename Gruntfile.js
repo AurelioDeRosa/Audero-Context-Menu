@@ -1,17 +1,47 @@
 module.exports = function (grunt) {
-
-   // Load grunt tasks automatically
-   require('load-grunt-tasks')(grunt);
+   require('time-grunt')(grunt);
+   require('jit-grunt')(grunt);
 
    grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
+
+      jscs: {
+         options: {
+            config: '.jscsrc',
+            fix: true,
+            force: true
+         },
+         dist: '<%= jshint.src %>'
+      },
 
       jshint: {
          options: {
             jshintrc: '.jshintrc',
             reporter: require('jshint-stylish')
          },
-         src: 'src/js/jquery.auderoContextMenu.js'
+         src: [
+            'src/js/*.js',
+            'test/spec/*.js'
+         ]
+      },
+
+      karma: {
+         unit: {
+            configFile: 'karma.conf.js'
+         }
+      },
+
+      jsdoc: {
+         src: {
+            src: [
+               'README.md',
+               'src/js/*.js',
+               'test/spec/*.js'
+            ],
+            options: {
+               destination: 'doc'
+            }
+         }
       },
 
       uglify: {
@@ -20,7 +50,7 @@ module.exports = function (grunt) {
          },
          dist: {
             files: {
-               'src/js/jquery.auderoContextMenu.min.js': ['src/js/jquery.auderoContextMenu.js']
+               'dist/js/jquery.auderoContextMenu.min.js': ['src/js/jquery.auderoContextMenu.js']
             }
          }
       },
@@ -28,11 +58,24 @@ module.exports = function (grunt) {
       cssmin: {
          dist: {
             files: {
-               'src/css/jquery.auderoContextMenu.min.css': ['src/css/jquery.auderoContextMenu.css']
+               'dist/css/jquery.auderoContextMenu.min.css': ['src/css/jquery.auderoContextMenu.css']
             }
          }
       }
    });
+
+   grunt.registerTask('lint', [
+      'jshint',
+      'jscs'
+   ]);
+
+   grunt.registerTask('test', [
+      'karma'
+   ]);
+
+   grunt.registerTask('doc', [
+      'jsdoc'
+   ]);
 
    grunt.registerTask('build', [
       'uglify',
@@ -40,8 +83,9 @@ module.exports = function (grunt) {
    ]);
 
    grunt.registerTask('default', [
-      'jshint',
+      'lint',
+      'test',
+      'doc',
       'build'
    ]);
-
-}
+};
