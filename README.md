@@ -20,6 +20,9 @@ Being a jQuery plugin, the only requirement is [jQuery](http://www.jquery.com) s
 
 It has been tested and works on all the major browsers, including Internet Explorer 6 and later.
 
+Audero Context Menu follow the [UMD (Universal Module Definition)](https://github.com/umdjs/umd) pattern to work
+seamlessly with module systems such as AMD and CommonJS, and the browser.
+
 ## Installation
 
 You can install Audero Context Menu by using [Bower](http://bower.io).
