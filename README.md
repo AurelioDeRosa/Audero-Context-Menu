@@ -1,5 +1,9 @@
 # Audero Context Menu
 
+[![Code Climate](https://codeclimate.com/github/AurelioDeRosa/Audero-Context-Menu/badges/gpa.svg)](https://codeclimate.com/github/AurelioDeRosa/Audero-Context-Menu)
+[![Build Status](https://travis-ci.org/AurelioDeRosa/Audero-Context-Menu.svg?branch=master)](https://travis-ci.org/AurelioDeRosa/Audero-Context-Menu)
+[![Coverage Status](https://coveralls.io/repos/AurelioDeRosa/Audero-Context-Menu/badge.svg?branch=master&service=github)](https://coveralls.io/github/AurelioDeRosa/Audero-Context-Menu?branch=master)
+
 [Audero Context Menu](https://github.com/AurelioDeRosa/Audero-Context-Menu) is a cross-browser jQuery plugin that
 allows you to show a custom context menu on one or more specified elements.
 
