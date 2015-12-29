@@ -25,10 +25,16 @@ seamlessly with module systems such as AMD and CommonJS, and the browser.
 
 ## Installation
 
-You can install Audero Context Menu by using [Bower](http://bower.io).
+You can install Audero Context Menu by using [npm](https://www.npmjs.com):
 
 ```
-bower install audero-context-menu --save
+npm install audero-context-menu
+```
+
+Alternatively, you can install it via [Bower](http://bower.io):
+
+```
+bower install audero-context-menu
 ```
 
 Alternatively, you can manually download it.
