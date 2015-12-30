@@ -38,7 +38,7 @@
     * @typedef MethodsHash
     * @type {Object}
     * @property {init} init The method to initialize the plugin
-    * @property {destroy} destroy The method to frees the space of the data
+    * @property {destroy} destroy The method to free the space of the data
     */
 
    /**
