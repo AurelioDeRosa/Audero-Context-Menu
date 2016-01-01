@@ -8,8 +8,7 @@ module.exports = function (grunt) {
       jscs: {
          options: {
             config: '.jscsrc',
-            fix: true,
-            force: true
+            fix: true
          },
          dist: '<%= jshint.src %>'
       },
