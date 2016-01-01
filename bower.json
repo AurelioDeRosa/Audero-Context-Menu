@@ -1,6 +1,6 @@
 {
    "name": "audero-context-menu",
-   "version": "2.4.0",
+   "version": "2.4.1",
    "description": "Audero Context Menu is a jQuery plugin to show a custom context menu on one or more specified elements.",
    "main": [
       "src/js/jquery.auderoContextMenu.js",
