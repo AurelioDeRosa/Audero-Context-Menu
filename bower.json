@@ -19,7 +19,7 @@
       "javascript",
       "umd"
    ],
-   "author": [
+   "authors": [
       "Aurelio De Rosa <a.derosa@audero.it> (http://audero.it)"
    ],
    "license": "(MIT OR GPL-3.0)",
